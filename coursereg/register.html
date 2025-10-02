@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+body{
+        text-align: center;
+        background-color: lightgrey;
+}
+form{
+    margin: auto;
+    padding: 20px;
+    width: 300px;
+    background-color: grey;
+
+}
+button{
+        background-color: rgb(36, 62, 64);
+        color: white;
+        font-weight: bold;
+        font-size: medium;
+        cursor: pointer;
+}
+button:hover{
+        background-color: green;
+        color: white;
+    }
+    input,select,button{
+        padding: 10px;
+        width: 90%;
+        margin: 10px 0;
+    }
+    </style>
+</head>
+<body>
+    <h1>Register a course</h1>
+    <h2 style="color: rgb(12, 88, 218);">Kickstart with an amazing courses....</h2>
+    <form action="http://localhost:8080/Coursereg/courses/register" method="post">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="coursename">Choose a course:</label>
+        <select id="coursename" name="coursename" required>
+            <option value="java">Java programming</option>
+            <option value="python">Python programming</option>
+            <option value="full stack">Full stack development.</option>
+        </select><br><br>
+        <button type="submit" value="Register">Submit</button>
+          </form>
+</body>
+</html>

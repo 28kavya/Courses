@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrolled students...</title>
+</head>
+<body>
+    <h1>Enrolled students....</h1>
+    <table align="center" border="1px" style="width:600px; line-height:40px;">
+        <tr>
+            <th>Course Name</th>
+            <th>Student Name</th>
+            <th>EmailId</th>
+            </tr>
+            <tbody align="center" id="enrolledtable"></tbody>
+    </table>
+    <script >
+        fetch('http://localhost:8080/Coursereg/courses/enrolled')
+        .then(response => response.json())
+        .then( student=> {
+            const tableBody = document.getElementById('enrolledtable');
+            student.forEach(course=> {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${course.coursename}</td>
+                    <td>${course.name}</td>
+                    <td>${course.email}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching course data:', error));
+        </script>
+</body>
+</html>
